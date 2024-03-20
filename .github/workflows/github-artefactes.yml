@@ -1,0 +1,26 @@
+name: GitHub Artefactes
+run-name: GitHub Artefactes Exemple
+on: [push]
+jobs:
+  Fer-CheckOut:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Fent CheckOut"
+      - uses: actions/checkout@v4
+  Guardar-Fitxer:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Pujar document de text"
+      uses: actions/upload-artifact@v4
+      with:
+        name: fitxer
+        path: fitxer-text.txt
+  Recuperar-Fitxer:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Descarregar document de text"
+      uses: actions/download-artifact@v4
+      with:
+        name: fitxer
+      - name: Mostrar contingut
+      - run: cat fitxer-text.txt
