@@ -9,6 +9,6 @@ jobs:
     steps:
       - run: echo "Mostrant la VARIABLE_1 => ${{ vars.VARIABLE_1 }}"
       - run: echo "Mostrant la VARIABLE_2  de workflow => ${{ env.VARIABLE_2 }}"
-      - env:
+      env:
           VARIABLE_2: "Variable de tasca"
       - run: echo "Mostrant la VARIABLE_2  => ${{ env.VARIABLE_2 }}"
