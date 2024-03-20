@@ -1,0 +1,16 @@
+name: GitHub Expressions
+run-name: GitHub Expressions Exemple
+on: [push, pull_request]
+jobs:
+  Comprobacions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: revisar push
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        run: echo "Aquesta és una comprovació de push a la branca master"
+      - name: revisar pull_request
+        if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+        run: echo "Aquesta és una comprovació de pull_request obert"
+      - name: revisar pull_request a la branca principal
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'master' }}
+        run: echo "Aquesta és una comprovació de pull_request obert a la branca principal"
