@@ -1,0 +1,13 @@
+name: GitHub Zip
+run-name: GitHub Zip Exemple
+on: [worlflow_dispatch]
+jobs:
+  Fer-CheckOut:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Fent CheckOut"
+      - uses: actions/checkout@v4
+      - run: echo "Instalar Unzip"
+      - run: sudo apt-get install unzip
+      - run: echo "Descomprimir el fitxer"
+      - run: unzip -P ${{ secrets.ZIP_PASS }} secret.zip
