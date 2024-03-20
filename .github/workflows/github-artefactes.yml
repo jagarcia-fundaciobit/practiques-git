@@ -7,10 +7,6 @@ jobs:
     steps:
       - run: echo "Fent CheckOut"
       - uses: actions/checkout@v4
-  Guardar-Fitxer:
-    needs: Fer-CheckOut
-    runs-on: ubuntu-latest
-    steps:
       - run: echo "Pujar document de text"
       - uses: actions/upload-artifact@v4
         with:
