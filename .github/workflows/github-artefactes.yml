@@ -8,6 +8,7 @@ jobs:
       - run: echo "Fent CheckOut"
       - uses: actions/checkout@v4
   Guardar-Fitxer:
+    needs: Fer-CheckOut
     runs-on: ubuntu-latest
     steps:
       - run: echo "Pujar document de text"
@@ -19,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Descarregar document de text"
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: fitxer
       - name: Mostrar contingut
