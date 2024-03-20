@@ -14,3 +14,6 @@ jobs:
       - name: revisar pull_request a la branca principal
         if: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main' }}
         run: echo "Aquesta és una comprovació de pull_request obert a la branca principal"
+      - name: revisar pull_request a la branca si és acceptada
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.merged == true }}
+        run: echo "Aquesta és una comprovació de pull_request obert a la branca principal i acceptada"
