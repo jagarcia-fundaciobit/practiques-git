@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: revisar push
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        run: echo "Aquesta és una comprovació de push a la branca master"
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: echo "Aquesta és una comprovació de push a la branca main"
       - name: revisar pull_request
-        if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+        if: ${{ github.event_name == 'pull_request' }}
         run: echo "Aquesta és una comprovació de pull_request obert"
       - name: revisar pull_request a la branca principal
-        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'master' }}
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main' }}
         run: echo "Aquesta és una comprovació de pull_request obert a la branca principal"
