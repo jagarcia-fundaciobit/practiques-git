@@ -1,8 +1,11 @@
 name: GitHub Variables Demo
 run-name: GitHub Variables
 on: [workflow_dispatch]
+env:
+  VARIABLE_2: "Variable de workflow"
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Mostrant la VARIABLE_1 => ${{ vars.VARIABLE_1 }}"
+      - run: echo "Mostrant la VARIABLE_2  de workflow => ${{ env.VARIABLE_2 }}"
