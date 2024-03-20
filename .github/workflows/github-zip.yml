@@ -1,6 +1,6 @@
 name: GitHub Zip
 run-name: GitHub Zip Exemple
-on: [worlflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   Fer-CheckOut:
     runs-on: ubuntu-latest
