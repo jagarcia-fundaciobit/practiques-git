@@ -11,3 +11,5 @@ jobs:
       - run: sudo apt-get install unzip
       - run: echo "Descomprimir el fitxer"
       - run: unzip -P ${{ secrets.ZIP_PASS }} secret.zip
+      - run: echo "Mostrar contingut"
+      - run: cat secret.txt
