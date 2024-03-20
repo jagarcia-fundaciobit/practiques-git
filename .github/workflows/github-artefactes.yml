@@ -13,7 +13,7 @@ jobs:
           name: fitxer
           path: fitxer-text.txt
   Recuperar-Fitxer:
-    needs: Guardar-Fitxer
+    needs: Fer-CheckOut
     runs-on: ubuntu-latest
     steps:
       - run: echo "Descarregar document de text"
