@@ -17,6 +17,7 @@ jobs:
           name: fitxer
           path: fitxer-text.txt
   Recuperar-Fitxer:
+    needs: Guardar-Fitxer
     runs-on: ubuntu-latest
     steps:
       - run: echo "Descarregar document de text"
@@ -24,4 +25,4 @@ jobs:
         with:
           name: fitxer
       - name: Mostrar contingut
-      - run: cat fitxer-text.txt
+        run: cat fitxer-text.txt
