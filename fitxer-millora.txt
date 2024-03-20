@@ -1,0 +1,1 @@
+Fitxer de millora per fer la pull-request.
